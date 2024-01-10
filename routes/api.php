@@ -20,10 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    Route::get('/baseball/dashbord', [DashbordController::class, 'index'])->name('baseball.dashbord');
 });
 
-// Route::get('/baseball/dashbord', [DashbordController::class, 'index'])->name('baseball.dashbord');
+Route::get('/baseball/dashbord', [DashbordController::class, 'index'])->name('baseball.dashbord');
 Route::get('/baseball/{dating}/game_detail', [GameDetailController::class, 'index'])->name('baseball.game_detail');
 Route::get('/baseball/game_detail/create', [GameDetailController::class, 'create'])->name('baseball.game_detail.create');
 Route::post('/baseball/game_detail/store', [GameDetailController::class, 'store'])->name('baseball.game_detail.store');
