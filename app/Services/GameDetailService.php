@@ -52,6 +52,7 @@ class GameDetailService
             unset($arranged_collection['expected_batting_order']['expectation_id']);
 
             $return_expected_order['user_name'] = $arranged_collection['expected_batting_order']['user_name'];
+            is_null($return_expected_order['user_name']) && $return_expected_order['user_name'] = "MIDDDLE BOSS";
 
             $member_array = $mst_member->whereIn('id', $arranged_collection['expected_position'])->get(['id', 'member_name', 'back_number'])->toArray();
             foreach ($member_array as $member) {
